@@ -38,7 +38,7 @@ System.out.println("割り算："+warizan);
 }
 else if(kigou.equals("%"))
 {
-System.out.println("余り："+warizan);
+System.out.println("余り："+amari);
 }
 }
 }
