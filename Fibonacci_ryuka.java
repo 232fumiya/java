@@ -20,7 +20,7 @@ for(int i=0;i<f_kazu;i++)
 	if(i>1)
 		f[i]=f[i-1].add(f[i-2]);
 	//結果出力
-	System.out.println(f[i]);
+	System.out.println(i+1+":"+f[i]);
 }
 /*----------------------リュカ-------------------------*/
 System.out.print("リュカ数列の調べたい数を入れてください：");
@@ -41,7 +41,7 @@ for(int j=0;j<r_kazu;j++)
 		r[j]=r[j-1].add(r[j-2]);
 	sum=r[j].add(sum);
 	//結果出力
-	System.out.println(r[j]);
+	System.out.println(j+1+":"+r[j]);
 }
 	System.out.println("合計："+sum);
 }
