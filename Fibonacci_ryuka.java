@@ -28,6 +28,7 @@ System.out.print("リュカ数列の調べたい数を入れてください：");
 int r_kazu = new java.util.Scanner(System.in).nextInt();
 //調べたい数の配列を用意する
 BigDecimal [] r = new BigDecimal[r_kazu];
+BigDecimal sum=BigDecimal.valueOf(0);
 //error表示対策＆初期値設定
 if(r_kazu>0)
 	r[0]=BigDecimal.valueOf(1);
@@ -38,8 +39,10 @@ for(int j=0;j<r_kazu;j++)
 {	
 	if(j>1)
 		r[j]=r[j-1].add(r[j-2]);
+	sum=r[j].add(sum);
 	//結果出力
 	System.out.println(r[j]);
 }
+	System.out.println("合計："+sum);
 }
 }
