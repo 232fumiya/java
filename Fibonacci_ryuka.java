@@ -4,7 +4,7 @@ class Fibonacci_ryuka
 public static void main(String argv[])
 {
 /*--------------------フィボナッチ---------------------------*/
-System.out.print("フィボナッチ数列の調べたい数を入れてください：");
+System.out.print("フィボナッチ数列：");
 //調べたい数を持ってくる
 int f_kazu = new java.util.Scanner(System.in).nextInt();
 //調べたい数の配列を用意する
@@ -23,7 +23,7 @@ for(int i=0;i<f_kazu;i++)
 	System.out.println(i+1+"番目:"+f[i]);
 }
 /*----------------------リュカ-------------------------*/
-System.out.print("リュカ数列の調べたい数を入れてください：");
+System.out.print("リュカ数列：");
 //調べたい数を持ってくる
 int r_kazu = new java.util.Scanner(System.in).nextInt();
 //調べたい数の配列を用意する
