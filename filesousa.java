@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 import java.io.FileReader;
+import java.io.StreamTokenizer;
 import java.io.FileNotFoundException;
 class filesousa
 {
@@ -13,9 +14,9 @@ public static void main(String argv[])
 try{
   File file = new File("filesousa.txt");
   FileWriter filewriter = new FileWriter(file);
-  for(int i=0;i<100;i++)
+  for(int i=0;i<10;i++)
   {
-   int ran = rnd.nextInt(10);
+   int ran = rnd.nextInt(100);
   filewriter.write(ran+",");
   }
   filewriter.close();
@@ -24,28 +25,24 @@ try{
 }
 /*-------------------ファイル読み込み＆計算-------------------------*/
 try{
- File file2 = new File("filesousa.txt");
- FileReader filereader = new FileReader(file2);
- int ch = filereader.read();
+ FileReader fr=new FileReader("filesousa.txt"); //FileReaderオブジェクトの作成
+ int ch=0;
  int ch2=0;
- while(ch!=-1){
-    System.out.print((char)ch);
-	if((int)ch != 44)
-	{
-	ch2+=ch;
-	}
-	else
-	{
-	ch2-=44;
-	//結果が5000を越えるのは","の44が足されているから??
-	}
-	ch = filereader.read();
- }
- System.out.println("合計："+ch2);
-}catch(FileNotFoundException e){
-  System.out.println(e);
-}catch(IOException e){
-  System.out.println(e);
-}
-}
+ StreamTokenizer st=new StreamTokenizer(fr);     //StreamTokenizerオブジェクトの作成
+
+	int i=0;
+    while(st.nextToken()!=StreamTokenizer.TT_EOF)   //ファイルの終わりに達するとTT_EOFが返されるので、そこでループ終了
+   {
+	  ch=(int)st.nval;
+      System.out.print(""+i+":"+ch+"  ");        //読み取ったデータを表示する。
+	  i++;
+	  ch2+=ch;
+   }System.out.println(" = "+ch2);
+       fr.close();
+       }
+       catch(Exception e)
+          {
+          System.out.println(e);  //エラーが起きたらエラー内容を表示
+          }
+          }     
 }
